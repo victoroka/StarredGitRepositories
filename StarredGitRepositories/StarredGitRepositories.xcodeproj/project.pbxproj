@@ -18,9 +18,12 @@
 		841D5F4923A52CC5007F6E18 /* RepositoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F4823A52CC5007F6E18 /* RepositoryList.swift */; };
 		841D5F4B23A52D1C007F6E18 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F4A23A52D1C007F6E18 /* Repository.swift */; };
 		841D5F4D23A52DBC007F6E18 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F4C23A52DBC007F6E18 /* Owner.swift */; };
-		841D5F4F23A53175007F6E18 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F4E23A53175007F6E18 /* NetworkService.swift */; };
 		841D5F5123A531D8007F6E18 /* RepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5023A531D8007F6E18 /* RepositoriesService.swift */; };
-		841D5F5323A532B4007F6E18 /* NetworkErrorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5223A532B4007F6E18 /* NetworkErrorTypes.swift */; };
+		841D5F5323A532B4007F6E18 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5223A532B4007F6E18 /* NetworkError.swift */; };
+		841D5F5723A561D9007F6E18 /* RepositoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5623A561D9007F6E18 /* RepositoriesList.swift */; };
+		841D5F5923A563A3007F6E18 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5823A563A3007F6E18 /* Endpoint.swift */; };
+		841D5F5B23A57145007F6E18 /* RepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5A23A57145007F6E18 /* RepositoryListView.swift */; };
+		841D5F5D23A5724C007F6E18 /* RepositoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5C23A5724C007F6E18 /* RepositoryRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +61,12 @@
 		841D5F4823A52CC5007F6E18 /* RepositoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryList.swift; sourceTree = "<group>"; };
 		841D5F4A23A52D1C007F6E18 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		841D5F4C23A52DBC007F6E18 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
-		841D5F4E23A53175007F6E18 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		841D5F5023A531D8007F6E18 /* RepositoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesService.swift; sourceTree = "<group>"; };
-		841D5F5223A532B4007F6E18 /* NetworkErrorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTypes.swift; sourceTree = "<group>"; };
+		841D5F5223A532B4007F6E18 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		841D5F5623A561D9007F6E18 /* RepositoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesList.swift; sourceTree = "<group>"; };
+		841D5F5823A563A3007F6E18 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		841D5F5A23A57145007F6E18 /* RepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListView.swift; sourceTree = "<group>"; };
+		841D5F5C23A5724C007F6E18 /* RepositoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				841D5F1823A52276007F6E18 /* ContentView.swift */,
+				841D5F5A23A57145007F6E18 /* RepositoryListView.swift */,
+				841D5F5C23A5724C007F6E18 /* RepositoryRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +170,7 @@
 		841D5F4523A524D7007F6E18 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				841D5F5623A561D9007F6E18 /* RepositoriesList.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -179,9 +188,9 @@
 		841D5F4723A5258B007F6E18 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				841D5F4E23A53175007F6E18 /* NetworkService.swift */,
 				841D5F5023A531D8007F6E18 /* RepositoriesService.swift */,
-				841D5F5223A532B4007F6E18 /* NetworkErrorTypes.swift */,
+				841D5F5223A532B4007F6E18 /* NetworkError.swift */,
+				841D5F5823A563A3007F6E18 /* Endpoint.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -320,12 +329,15 @@
 				841D5F1523A52276007F6E18 /* AppDelegate.swift in Sources */,
 				841D5F4D23A52DBC007F6E18 /* Owner.swift in Sources */,
 				841D5F1723A52276007F6E18 /* SceneDelegate.swift in Sources */,
+				841D5F5723A561D9007F6E18 /* RepositoriesList.swift in Sources */,
 				841D5F4B23A52D1C007F6E18 /* Repository.swift in Sources */,
 				841D5F1923A52276007F6E18 /* ContentView.swift in Sources */,
 				841D5F5123A531D8007F6E18 /* RepositoriesService.swift in Sources */,
+				841D5F5B23A57145007F6E18 /* RepositoryListView.swift in Sources */,
 				841D5F4923A52CC5007F6E18 /* RepositoryList.swift in Sources */,
-				841D5F4F23A53175007F6E18 /* NetworkService.swift in Sources */,
-				841D5F5323A532B4007F6E18 /* NetworkErrorTypes.swift in Sources */,
+				841D5F5D23A5724C007F6E18 /* RepositoryRowView.swift in Sources */,
+				841D5F5923A563A3007F6E18 /* Endpoint.swift in Sources */,
+				841D5F5323A532B4007F6E18 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

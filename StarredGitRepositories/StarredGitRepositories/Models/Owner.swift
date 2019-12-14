@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK:- Codable Protocol
 struct Owner: Codable {
     
     let name: String

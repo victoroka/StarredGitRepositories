@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK:- Codable Protocol
 struct RepositoryList: Codable {
     
     let repositories: [Repository]?

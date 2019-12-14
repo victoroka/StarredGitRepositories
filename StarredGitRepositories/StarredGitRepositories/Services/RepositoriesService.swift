@@ -8,31 +8,48 @@
 
 import Foundation
 
-class RepositoriesService: NetworkService {
+class RepositoriesService {
     
     static let shared = RepositoriesService()
     let session: URLSession = URLSession(configuration: .default)
     
-    func fetchRepositories(_ request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+    func fetchRepositories(_ endpoint: Endpoint, completion: @escaping (Result<RepositoryList, NetworkError>) -> Void) {
         
-        // guard let url = request.url else { return }
-        let url = URL(string: "https://api.github.com/search/repositories?q=language:swift&sort=stars")!
+        guard let url = endpoint.url else {
+            completion(.failure(.badUrl))
+            return
+        }
+        
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
-            print(response)
-            if error != nil {
-                print(error)
-                return
+            
+            if data == nil {
+                completion(.failure(.emptyResponseDataError))
             }
             
-            do {
-                let json = try JSONDecoder().decode(RepositoryList.self, from: data! )
-                    //try JSONSerialization.jsonObject(with: data!, options: [])
-                print(json)
-            } catch {
-                print("Error during JSON serialization: \(error.localizedDescription)")
+            let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+            if 200...299 ~= statusCode {
+                do {
+                    let decodedRepositoryList = try JSONDecoder().decode(RepositoryList.self, from: data!)
+                    completion(.success(decodedRepositoryList))
+                } catch {
+                    completion(.failure(.mappingError))
+                }
             }
-            
+            completion(.failure(self.getErrorDescription(for: statusCode)))
         })
         task.resume()
+    }
+    
+    private func getErrorDescription(for statusCode: Int) -> NetworkError {
+        switch statusCode {
+        case 401:
+            return .unauthorized
+        case 403:
+            return .forbidden
+        case 404:
+            return .notFound
+        default:
+            return .unknownError
+        }
     }
 }
