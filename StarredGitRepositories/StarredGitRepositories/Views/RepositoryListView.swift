@@ -16,9 +16,14 @@ struct RepositoryListView: View {
         NavigationView {
             Group {
                 List(self.repositoriesList.list.repositories ?? []) { repository in
-                    RepositoryListView()
+                    RepositoryRowView(repository: repository)
                 }
             }
+            .navigationBarTitle("Swift")
+        }
+        .onAppear {
+            UITableView.appearance().separatorStyle = .none
+            self.repositoriesList.reload()
         }
     }
 }
