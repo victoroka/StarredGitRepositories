@@ -9,8 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    var service = RepositoriesService.shared
+    
     var body: some View {
-        Text("Hello, World!")
+        Button(action: {
+            self.service.fetchRepositories(URLRequest(url: URL(string: "https://api.github.com/search/repositories?q=language:swift&sort=stars")!)) { (result) in
+                print(result)
+            }
+        }) {
+            Text("Request")
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 # StarredGitRepositories
-<p align="center">
+<p align="left">
     <img src="https://img.shields.io/badge/Swift-5.1-orange.svg" />
     <img src="https://img.shields.io/badge/Xcode-11.2.1-orange.svg" />
     <a href="https://cocoapods.org">

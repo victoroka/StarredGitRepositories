@@ -15,6 +15,12 @@
 		841D5F2123A5227D007F6E18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841D5F1F23A5227D007F6E18 /* LaunchScreen.storyboard */; };
 		841D5F2C23A5227E007F6E18 /* StarredGitRepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F2B23A5227E007F6E18 /* StarredGitRepositoriesTests.swift */; };
 		841D5F3723A5227E007F6E18 /* StarredGitRepositoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F3623A5227E007F6E18 /* StarredGitRepositoriesUITests.swift */; };
+		841D5F4923A52CC5007F6E18 /* RepositoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F4823A52CC5007F6E18 /* RepositoryList.swift */; };
+		841D5F4B23A52D1C007F6E18 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F4A23A52D1C007F6E18 /* Repository.swift */; };
+		841D5F4D23A52DBC007F6E18 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F4C23A52DBC007F6E18 /* Owner.swift */; };
+		841D5F4F23A53175007F6E18 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F4E23A53175007F6E18 /* NetworkService.swift */; };
+		841D5F5123A531D8007F6E18 /* RepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5023A531D8007F6E18 /* RepositoriesService.swift */; };
+		841D5F5323A532B4007F6E18 /* NetworkErrorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5223A532B4007F6E18 /* NetworkErrorTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		841D5F3223A5227E007F6E18 /* StarredGitRepositoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarredGitRepositoriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		841D5F3623A5227E007F6E18 /* StarredGitRepositoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredGitRepositoriesUITests.swift; sourceTree = "<group>"; };
 		841D5F3823A5227E007F6E18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841D5F4823A52CC5007F6E18 /* RepositoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryList.swift; sourceTree = "<group>"; };
+		841D5F4A23A52D1C007F6E18 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		841D5F4C23A52DBC007F6E18 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		841D5F4E23A53175007F6E18 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		841D5F5023A531D8007F6E18 /* RepositoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesService.swift; sourceTree = "<group>"; };
+		841D5F5223A532B4007F6E18 /* NetworkErrorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +113,10 @@
 			children = (
 				841D5F1423A52276007F6E18 /* AppDelegate.swift */,
 				841D5F1623A52276007F6E18 /* SceneDelegate.swift */,
-				841D5F1823A52276007F6E18 /* ContentView.swift */,
+				841D5F4423A524A5007F6E18 /* Views */,
+				841D5F4523A524D7007F6E18 /* ViewModels */,
+				841D5F4623A524F7007F6E18 /* Models */,
+				841D5F4723A5258B007F6E18 /* Services */,
 				841D5F1A23A5227D007F6E18 /* Assets.xcassets */,
 				841D5F1F23A5227D007F6E18 /* LaunchScreen.storyboard */,
 				841D5F2223A5227D007F6E18 /* Info.plist */,
@@ -134,6 +149,41 @@
 				841D5F3823A5227E007F6E18 /* Info.plist */,
 			);
 			path = StarredGitRepositoriesUITests;
+			sourceTree = "<group>";
+		};
+		841D5F4423A524A5007F6E18 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				841D5F1823A52276007F6E18 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		841D5F4523A524D7007F6E18 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		841D5F4623A524F7007F6E18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				841D5F4823A52CC5007F6E18 /* RepositoryList.swift */,
+				841D5F4A23A52D1C007F6E18 /* Repository.swift */,
+				841D5F4C23A52DBC007F6E18 /* Owner.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		841D5F4723A5258B007F6E18 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				841D5F4E23A53175007F6E18 /* NetworkService.swift */,
+				841D5F5023A531D8007F6E18 /* RepositoriesService.swift */,
+				841D5F5223A532B4007F6E18 /* NetworkErrorTypes.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +318,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				841D5F1523A52276007F6E18 /* AppDelegate.swift in Sources */,
+				841D5F4D23A52DBC007F6E18 /* Owner.swift in Sources */,
 				841D5F1723A52276007F6E18 /* SceneDelegate.swift in Sources */,
+				841D5F4B23A52D1C007F6E18 /* Repository.swift in Sources */,
 				841D5F1923A52276007F6E18 /* ContentView.swift in Sources */,
+				841D5F5123A531D8007F6E18 /* RepositoriesService.swift in Sources */,
+				841D5F4923A52CC5007F6E18 /* RepositoryList.swift in Sources */,
+				841D5F4F23A53175007F6E18 /* NetworkService.swift in Sources */,
+				841D5F5323A532B4007F6E18 /* NetworkErrorTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
