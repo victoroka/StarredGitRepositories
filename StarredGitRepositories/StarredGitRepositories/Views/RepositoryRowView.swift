@@ -15,38 +15,49 @@ struct RepositoryRowView: View {
     var body: some View {
         VStack {
             HStack {
-                Image("")
+                CircleAvatarView(picturePath: repository.owner.picture).padding(.trailing)
                 VStack(alignment: .leading) {
-                    Text("Language")
-                        .font(.headline)
+                    Text("Swift")
+                        .font(.custom("Avenir", size: 14))
                         .foregroundColor(.secondary)
                     Text(repository.name)
-                        .font(.title)
+                        .font(.custom("Avenir", size: 22))
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
+                        .fixedSize(horizontal: false, vertical: true)
                     Text("by \(repository.owner.name)".uppercased())
-                        .font(.caption)
+                        .font(.custom("Avenir", size: 12))
                         .foregroundColor(.secondary)
                 }
                 .layoutPriority(100)
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("36K")
+                    Text(self.formatNumberOfStars(repository.numberOfStars))
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                     Image(systemName: "star.fill")
-                    .resizable()
-                    .frame(width: 20.0, height: 20.0)
+                        .resizable()
+                        .frame(width: 20.0, height: 20.0)
                         .foregroundColor(.yellow)
                 }
+                .padding(.leading)
+                .fixedSize()
             }
             .padding()
         }
         .cornerRadius(10)
+        .padding([.top, .horizontal])
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150.255, opacity: 1), lineWidth: 1)
-            )
-        .padding([.top, .horizontal])
+                .stroke(Color(.sRGB, red: 200/255, green: 200/255, blue: 200/255, opacity: 1), lineWidth: 1)
+        )
+    }
+    
+    private func formatNumberOfStars(_ numberOfStars: Int) -> String {
+        if numberOfStars > 1000 {
+            return "\(Int(numberOfStars/1000))K"
+        } else {
+            return "\(numberOfStars)"
+        }
     }
 }

@@ -15,15 +15,23 @@ struct RepositoryListView: View {
     var body: some View {
         NavigationView {
             Group {
-                List(self.repositoriesList.list.repositories ?? []) { repository in
-                    RepositoryRowView(repository: repository)
+                if repositoriesList.isLoading {
+                    LoadingView()
+                } else {
+                    List(self.repositoriesList.list.repositories ?? []) { repository in
+                        RepositoryRowView(repository: repository)
+                    }
                 }
             }
-            .navigationBarTitle("Swift")
+            .navigationBarTitle("Git Repositories")
         }
         .onAppear {
             UITableView.appearance().separatorStyle = .none
-            self.repositoriesList.reload()
+            if let repos = self.repositoriesList.list.repositories {
+                if repos.isEmpty {
+                    self.repositoriesList.reload()
+                }
+            }
         }
     }
 }

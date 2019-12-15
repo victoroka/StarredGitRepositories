@@ -20,11 +20,15 @@ class RepositoriesList: ObservableObject {
         self.isLoading = true
         
         repositoriesService.fetchRepositories(Endpoint.build()) { [weak self] (result) in
-            self?.isLoading = false
+            DispatchQueue.main.async {
+                self?.isLoading = false
+            }
             
             switch result {
             case .success(let repositories):
-                self?.list = repositories
+                DispatchQueue.main.async {
+                    self?.list = repositories
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
