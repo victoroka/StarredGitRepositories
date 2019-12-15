@@ -14,13 +14,19 @@ struct RepositoryListView: View {
     
     var body: some View {
         NavigationView {
-            Group {
-                if repositoriesList.isLoading {
-                    LoadingView()
-                } else {
-                    List(self.repositoriesList.list.repositories ?? []) { repository in
-                        RepositoryRowView(repository: repository)
+            List {
+                
+                GeometryReader { g -> Text in
+                    let frame = g.frame(in: CoordinateSpace.global)
+                    if frame.origin.y > 250 && !self.repositoriesList.isLoading {
+                        self.repositoriesList.reload()
+                        return Text("Loading...")
                     }
+                    return Text("")
+                }
+                
+                ForEach(self.repositoriesList.list.repositories ?? [], id: \.id) { repository in
+                    RepositoryRowView(repository: repository)
                 }
             }
             .navigationBarTitle("Git Repositories")
