@@ -23,9 +23,10 @@
 		841D5F5923A563A3007F6E18 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5823A563A3007F6E18 /* Endpoint.swift */; };
 		841D5F5B23A57145007F6E18 /* RepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5A23A57145007F6E18 /* RepositoryListView.swift */; };
 		841D5F5D23A5724C007F6E18 /* RepositoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F5C23A5724C007F6E18 /* RepositoryRowView.swift */; };
-		841D5F6223A5BCF1007F6E18 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F6123A5BCF1007F6E18 /* LoadingView.swift */; };
 		841D5F6423A5C871007F6E18 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F6323A5C871007F6E18 /* ImageLoader.swift */; };
 		841D5F6623A5E2E7007F6E18 /* CircleAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D5F6523A5E2E7007F6E18 /* CircleAvatarView.swift */; };
+		843829BB23A6EDDC00C1982C /* ProgrammingLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843829BA23A6EDDC00C1982C /* ProgrammingLanguage.swift */; };
+		843829BD23A6F20800C1982C /* RepositoryRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843829BC23A6F20800C1982C /* RepositoryRootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +69,10 @@
 		841D5F5823A563A3007F6E18 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		841D5F5A23A57145007F6E18 /* RepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListView.swift; sourceTree = "<group>"; };
 		841D5F5C23A5724C007F6E18 /* RepositoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRowView.swift; sourceTree = "<group>"; };
-		841D5F6123A5BCF1007F6E18 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		841D5F6323A5C871007F6E18 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		841D5F6523A5E2E7007F6E18 /* CircleAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAvatarView.swift; sourceTree = "<group>"; };
+		843829BA23A6EDDC00C1982C /* ProgrammingLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguage.swift; sourceTree = "<group>"; };
+		843829BC23A6F20800C1982C /* RepositoryRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,10 +166,10 @@
 		841D5F4423A524A5007F6E18 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				841D5F6023A5BCDA007F6E18 /* UIKitViews */,
 				841D5F5A23A57145007F6E18 /* RepositoryListView.swift */,
 				841D5F5C23A5724C007F6E18 /* RepositoryRowView.swift */,
 				841D5F6523A5E2E7007F6E18 /* CircleAvatarView.swift */,
+				843829BC23A6F20800C1982C /* RepositoryRootView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +189,7 @@
 				841D5F4823A52CC5007F6E18 /* RepositoryList.swift */,
 				841D5F4A23A52D1C007F6E18 /* Repository.swift */,
 				841D5F4C23A52DBC007F6E18 /* Owner.swift */,
+				843829BA23A6EDDC00C1982C /* ProgrammingLanguage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,14 +202,6 @@
 				841D5F5823A563A3007F6E18 /* Endpoint.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		841D5F6023A5BCDA007F6E18 /* UIKitViews */ = {
-			isa = PBXGroup;
-			children = (
-				841D5F6123A5BCF1007F6E18 /* LoadingView.swift */,
-			);
-			path = UIKitViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,11 +336,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				841D5F1523A52276007F6E18 /* AppDelegate.swift in Sources */,
+				843829BB23A6EDDC00C1982C /* ProgrammingLanguage.swift in Sources */,
 				841D5F4D23A52DBC007F6E18 /* Owner.swift in Sources */,
+				843829BD23A6F20800C1982C /* RepositoryRootView.swift in Sources */,
 				841D5F1723A52276007F6E18 /* SceneDelegate.swift in Sources */,
 				841D5F5723A561D9007F6E18 /* RepositoriesList.swift in Sources */,
 				841D5F4B23A52D1C007F6E18 /* Repository.swift in Sources */,
-				841D5F6223A5BCF1007F6E18 /* LoadingView.swift in Sources */,
 				841D5F5123A531D8007F6E18 /* RepositoriesService.swift in Sources */,
 				841D5F5B23A57145007F6E18 /* RepositoryListView.swift in Sources */,
 				841D5F4923A52CC5007F6E18 /* RepositoryList.swift in Sources */,

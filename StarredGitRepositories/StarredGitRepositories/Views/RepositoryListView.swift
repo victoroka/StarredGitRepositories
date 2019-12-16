@@ -12,6 +12,8 @@ struct RepositoryListView: View {
     
     @ObservedObject var repositoriesList = RepositoriesList()
     
+    var programmingLanguage: ProgrammingLanguage = .swift
+    
     var body: some View {
         NavigationView {
             List {
@@ -19,7 +21,7 @@ struct RepositoryListView: View {
                 GeometryReader { g -> Text in
                     let frame = g.frame(in: CoordinateSpace.global)
                     if frame.origin.y > 250 && !self.repositoriesList.isLoading {
-                        self.repositoriesList.reload()
+                        self.repositoriesList.reload(for: self.programmingLanguage)
                         return Text("Loading...")
                     }
                     return Text("")
@@ -29,21 +31,15 @@ struct RepositoryListView: View {
                     RepositoryRowView(repository: repository)
                 }
             }
-            .navigationBarTitle("Git Repositories")
+            .navigationBarTitle("\(programmingLanguage.name) GitHub")
         }
         .onAppear {
             UITableView.appearance().separatorStyle = .none
             if let repos = self.repositoriesList.list.repositories {
                 if repos.isEmpty {
-                    self.repositoriesList.reload()
+                    self.repositoriesList.reload(for: self.programmingLanguage)
                 }
             }
         }
-    }
-}
-
-struct RepositoryListView_Previews: PreviewProvider {
-    static var previews: some View {
-        RepositoryListView()
     }
 }

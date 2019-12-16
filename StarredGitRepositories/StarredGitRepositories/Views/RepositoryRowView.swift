@@ -17,16 +17,16 @@ struct RepositoryRowView: View {
             HStack {
                 CircleAvatarView(picturePath: repository.owner.picture).padding(.trailing)
                 VStack(alignment: .leading) {
-                    Text("Swift")
-                        .font(.custom("Avenir", size: 14))
+                    Text(repository.language)
+                        .font(.custom("Avenir", size: 12))
                         .foregroundColor(.secondary)
                     Text(repository.name)
-                        .font(.custom("Avenir", size: 22))
+                        .font(.custom("Avenir", size: 18))
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                         .fixedSize(horizontal: false, vertical: true)
                     Text("by \(repository.owner.name)".uppercased())
-                        .font(.custom("Avenir", size: 12))
+                        .font(.custom("Avenir", size: 13))
                         .foregroundColor(.secondary)
                 }
                 .layoutPriority(100)

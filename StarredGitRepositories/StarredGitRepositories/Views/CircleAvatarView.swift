@@ -11,6 +11,7 @@ import SwiftUI
 struct CircleAvatarView: View {
     
     @ObservedObject var imageLoader: ImageLoader = ImageLoader()
+    
     var picturePath: String = ""
     
     var body: some View {

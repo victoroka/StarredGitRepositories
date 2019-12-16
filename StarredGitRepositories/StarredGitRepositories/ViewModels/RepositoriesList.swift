@@ -15,11 +15,11 @@ class RepositoriesList: ObservableObject {
     
     var repositoriesService = RepositoriesService.shared
     
-    func reload() {
+    func reload(for programmingLanguage: ProgrammingLanguage) {
         self.list = RepositoryList(repositories: [])
         self.isLoading = true
         
-        repositoriesService.fetchRepositories(Endpoint.build()) { [weak self] (result) in
+        repositoriesService.fetchRepositories(Endpoint.build(language: programmingLanguage.description, sort: "stars")) { [weak self] (result) in
             DispatchQueue.main.async {
                 self?.isLoading = false
             }

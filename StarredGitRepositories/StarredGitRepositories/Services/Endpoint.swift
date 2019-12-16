@@ -22,12 +22,12 @@ struct Endpoint {
         return components.url
     }
     
-    static func build() -> Endpoint {
+    static func build(language: String = "swift", sort: String = "stars") -> Endpoint {
         Endpoint(
             path: "/search/repositories",
             queryItems: [
-                URLQueryItem(name: "q", value: "language:swift"),
-                URLQueryItem(name: "sort", value: "stars")
+                URLQueryItem(name: "q", value: "language:\(language)"),
+                URLQueryItem(name: "sort", value: "\(sort)")
         ])
     }
 }
