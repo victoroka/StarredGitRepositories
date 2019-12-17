@@ -31,7 +31,7 @@ struct RepositoryListView: View {
                     RepositoryRowView(repository: repository)
                 }
             }
-            .navigationBarTitle("\(programmingLanguage.name) GitHub")
+            .navigationBarTitle("\(programmingLanguage.name) Repositories")
         }
         .onAppear {
             UITableView.appearance().separatorStyle = .none
