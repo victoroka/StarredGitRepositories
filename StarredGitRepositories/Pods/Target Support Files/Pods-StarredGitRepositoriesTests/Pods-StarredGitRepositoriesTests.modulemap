@@ -1,0 +1,6 @@
+framework module Pods_StarredGitRepositoriesTests {
+  umbrella header "Pods-StarredGitRepositoriesTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

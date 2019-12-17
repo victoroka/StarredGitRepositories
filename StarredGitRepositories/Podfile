@@ -1,0 +1,16 @@
+platform :ios, '13.2'
+
+def test_libs
+  pod 'Nimble'
+  pod 'Quick'
+  pod 'Nimble-Snapshots'
+end
+
+target 'StarredGitRepositories' do
+  use_frameworks!
+  
+  target 'StarredGitRepositoriesTests' do
+    inherit! :search_paths
+    test_libs
+  end
+end
