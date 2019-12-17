@@ -15,15 +15,19 @@
 </p>
 
 ## Installation
-To clone and run this project locally, please execute the following commands:
+To run this project locally, please clone the repository executing the following command:
 ```
 $ git clone https://github.com/victoroka/StarredGitRepositories.git
+```
+
+And if you are going to run the project test module as well, you should also execute:
+```
 $ cd StarredGitRepositories
 $ pod install
 ```
 
 ## Libraries
-The project was built with the Apple's brand new framework **SwiftUI**, a **native** user interface toolkit that lets us design apps in a declarative way. And for testing, it was used the following third-party dependencies managed by **CocoaPods**:
+The project was built with the Apple's brand new framework **SwiftUI**, a **native user interface toolkit** that lets us design apps in a declarative way. And for testing, it was used the following third-party dependencies managed by **CocoaPods**:
 - **Quick**: The Swift (and Objective-C) testing framework, mainly used for BDD (behavior-driven development) tests.
 - **Nimble**: A Matcher Framework for Swift and Objective-C that allows you to express expectations using a natural, easily understood language.
 
