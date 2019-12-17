@@ -20,7 +20,7 @@ class RepositoriesList: ObservableObject {
         self.isLoading = true
         
         repositoriesService.fetchRepositories(Endpoint.build(language: programmingLanguage.description, sort: "stars")) { [weak self] (result) in
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self?.isLoading = false
             }
             

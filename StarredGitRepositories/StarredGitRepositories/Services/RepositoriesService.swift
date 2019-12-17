@@ -40,7 +40,7 @@ class RepositoriesService {
         task.resume()
     }
     
-    private func getErrorDescription(for statusCode: Int) -> NetworkError {
+    func getErrorDescription(for statusCode: Int) -> NetworkError {
         switch statusCode {
         case 401:
             return .unauthorized

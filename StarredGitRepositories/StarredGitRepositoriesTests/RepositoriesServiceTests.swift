@@ -18,5 +18,15 @@ class RepositoriesServiceTests: QuickSpec {
     
     override func spec() {
         super.spec()
+        describe("A network response code") {
+            context("Given the response status code") {
+                it("It should return the correct network error type") {
+                    expect(self.service.getErrorDescription(for: 401)).to(equal(.unauthorized))
+                    expect(self.service.getErrorDescription(for: 403)).to(equal(.forbidden))
+                    expect(self.service.getErrorDescription(for: 404)).to(equal(.notFound))
+                    expect(self.service.getErrorDescription(for: 405)).to(equal(.unknownError))
+                }
+            }
+        }
     }
 }
